@@ -8,7 +8,17 @@ description = "Simple collection of Juturna plugins"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "juturna>=2.0.0"
+    "juturna>=2.0.0",
+    "numpy"
+]
+
+[project.optional-dependencies]
+proc-matrixgenerator = [
+    "numpy"
+]
+
+proc = [
+    "awesome-jt[proc-matrixgenerator]"
 ]
 
 [build-system]
