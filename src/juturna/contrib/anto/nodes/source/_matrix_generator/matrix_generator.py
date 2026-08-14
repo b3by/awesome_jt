@@ -13,6 +13,7 @@ import numpy as np
 
 from juturna.components import Node
 from juturna.components import Message
+from juturna.components import State
 
 from juturna.payloads import ImagePayload
 
@@ -77,7 +78,7 @@ class MatrixGenerator(Node[ImagePayload, ImagePayload]):
         """Destroy the node"""
         ...
 
-    def update(self, message: Message[ImagePayload]):
+    def update(self, message: Message[ImagePayload], state: State):
         """Receive data from upstream, transmit data downstream"""
         self.transmit(message)
 
